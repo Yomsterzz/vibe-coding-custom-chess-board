@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Board Chess Online</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/themes.css">
+    <link rel="stylesheet" href="styles/board.css">
+    <link rel="stylesheet" href="styles/ui.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Custom Board Chess Online</h1>
+            <div class="settings-container">
+                <div class="board-size-selector">
+                    <select id="rows-selector">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8" selected>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <span>x</span>
+                    <select id="cols-selector">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8" selected>8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <button id="settings-btn" class="settings-btn">
+                    <span class="gear-icon">⚙️</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-container">
+                <div class="board-container">
+                    <div id="chessboard" class="chessboard"></div>
+                </div>
+                
+                <div class="game-info">
+                    <div class="side-selection">
+                        <h3>Play as:</h3>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="side" value="white" checked>
+                                White
+                            </label>
+                            <label>
+                                <input type="radio" name="side" value="black">
+                                Black
+                            </label>
+                            <label>
+                                <input type="radio" name="side" value="random">
+                                Random
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="turn-indicator">
+                        <p>White to move</p>
+                    </div>
+                    
+                    <div class="history-container">
+                        <h3>Move History</h3>
+                        <div id="move-history" class="move-history"></div>
+                        <button id="pgn-download" class="pgn-download">Download PGN</button>
+                    </div>
+                    
+                    <div class="game-controls">
+                        <button id="play-btn" class="play-btn">Play</button>
+                        <button id="resign-btn" class="resign-btn" disabled>Resign</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Settings Modal -->
+        <div id="settings-modal" class="modal">
+            <div class="modal-content">
+                <h2>Game Settings</h2>
+                
+                <div class="settings-section">
+                    <h3>Color Theme</h3>
+                    <select id="theme-selector">
+                        <option value="classic">Classic</option>
+                        <option value="forest">Forest</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="desert">Desert</option>
+                        <option value="coral">Coral</option>
+                        <option value="midnight">Midnight</option>
+                        <option value="emerald">Emerald</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="amethyst">Amethyst</option>
+                        <option value="gold">Gold</option>
+                    </select>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>Display Options</h3>
+                    <div class="toggle-option">
+                        <label for="animations-toggle">Animations</label>
+                        <input type="checkbox" id="animations-toggle" checked>
+                    </div>
+                    <div class="toggle-option">
+                        <label for="dark-mode-toggle">Dark Mode</label>
+                        <input type="checkbox" id="dark-mode-toggle">
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>Move Input Method</h3>
+                    <div class="toggle-option">
+                        <label for="move-method-toggle">Drag and Drop</label>
+                        <input type="checkbox" id="move-method-toggle">
+                        <span class="toggle-label">Double Click</span>
+                    </div>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>Time Control</h3>
+                    <select id="time-control">
+                        <option value="blitz">Blitz (3 minutes)</option>
+                        <option value="rapid">Rapid (10 minutes)</option>
+                        <option value="nolimit" selected>No Limit</option>
+                    </select>
+                </div>
+                
+                <div class="settings-section">
+                    <h3>Bot Difficulty</h3>
+                    <select id="bot-difficulty">
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate" selected>Intermediate</option>
+                        <option value="difficult">Difficult</option>
+                        <option value="impossible">Impossible (8x8 only)</option>
+                    </select>
+                    <p class="stockfish-note">Note: Impossible difficulty is only available for 8x8 boards.</p>
+                </div>
+                
+                <div class="modal-buttons">
+                    <button id="close-settings">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game End Modal -->
+        <div id="game-end-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="game-result">YOU WON!</h2>
+                <div class="modal-buttons">
+                    <button id="play-again-btn">Play Again</button>
+                    <button id="new-game-btn">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* Chess board themes */
+:root {
+    /* Classic theme */
+    --classic-light: #f0d9b5;
+    --classic-dark: #b58863;
+    
+    /* Forest theme */
+    --forest-light: #a8c899;
+    --forest-dark: #586e47;
+    
+    /* Ocean theme */
+    --ocean-light: #b3d9ff;
+    --ocean-dark: #4d88cc;
+    
+    /* Desert theme */
+    --desert-light: #f4d03f;
+    --desert-dark: #d68910;
+    
+    /* Coral theme */
+    --coral-light: #ffb3b3;
+    --coral-dark: #ff6666;
+    
+    /* Midnight theme */
+    --midnight-light: #4a5664;
+    --midnight-dark: #2c3e50;
+    
+    /* Emerald theme */
+    --emerald-light: #a8e6cf;
+    --emerald-dark: #3d8168;
+    
+    /* Ruby theme */
+    --ruby-light: #ffb3b3;
+    --ruby-dark: #cc0000;
+    
+    /* Amethyst theme */
+    --amethyst-light: #d2b4de;
+    --amethyst-dark: #8e44ad;
+    
+    /* Gold theme */
+    --gold-light: #ffd700;
+    --gold-dark: #daa520;
+}
+
+/* Theme applications */
+[data-theme="classic"] .chessboard .square {
+    --square-light: var(--classic-light);
+    --square-dark: var(--classic-dark);
+}
+
+[data-theme="forest"] .chessboard .square {
+    --square-light: var(--forest-light);
+    --square-dark: var(--forest-dark);
+}
+
+[data-theme="ocean"] .chessboard .square {
+    --square-light: var(--ocean-light);
+    --square-dark: var(--ocean-dark);
+}
+
+[data-theme="desert"] .chessboard .square {
+    --square-light: var(--desert-light);
+    --square-dark: var(--desert-dark);
+}
+
+[data-theme="coral"] .chessboard .square {
+    --square-light: var(--coral-light);
+    --square-dark: var(--coral-dark);
+}
+
+[data-theme="midnight"] .chessboard .square {
+    --square-light: var(--midnight-light);
+    --square-dark: var(--midnight-dark);
+}
+
+[data-theme="emerald"] .chessboard .square {
+    --square-light: var(--emerald-light);
+    --square-dark: var(--emerald-dark);
+}
+
+[data-theme="ruby"] .chessboard .square {
+    --square-light: var(--ruby-light);
+    --square-dark: var(--ruby-dark);
+}
+
+[data-theme="amethyst"] .chessboard .square {
+    --square-light: var(--amethyst-light);
+    --square-dark: var(--amethyst-dark);
+}
+
+[data-theme="gold"] .chessboard .square {
+    --square-light: var(--gold-light);
+    --square-dark: var(--gold-dark);
+}
+
+/* Dark mode adjustments */
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-mode .modal-content {
+    background-color: #2d2d2d;
+    color: #ffffff;
+}
+
+.dark-mode button {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    border: 1px solid #4d4d4d;
+}
+
+.dark-mode button:hover {
+    background-color: #4d4d4d;
+}
+
+.dark-mode select {
+    background-color: #3d3d3d;
+    color: #ffffff;
+    border: 1px solid #4d4d4d;
+}
+
+.dark-mode .move-history {
+    background-color: #2d2d2d;
+    border-color: #4d4d4d;
+}
